@@ -1,2 +1,5 @@
 # Ideas EndPoints
-* subordinados
+* Subordinados
+
+# Base de datos
+* Tabla de historial
