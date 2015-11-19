@@ -7,14 +7,12 @@
 * @package Tests\Logs
 */
 
-namespace Tests\Logs;
-
 use UCRest\Models\Logs\SystemLog;
 
 /**
 * Clase que lleva acabo los test de clase UCRest\Models\Logs\SystemLog.
 */
-class LogTest extends TestCase
+class LogTest extends \TestCase
 {
 	
 
