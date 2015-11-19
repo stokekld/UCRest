@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
+	throw new Exception("Error Processing Request", 1);
     return view('bienvenida');
 });
