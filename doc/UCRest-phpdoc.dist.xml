@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <title>UC (REST)</title>
+  <parser>
+    <target>./UCRest</target>
+    <encoding>utf8</encoding>
+  </parser>
+  <transformer>
+    <target>./UCRest</target>
+  </transformer>
+  <files>
+    <directory>../UCRest/app/Models</directory>
+  </files>
+</phpdoc>
