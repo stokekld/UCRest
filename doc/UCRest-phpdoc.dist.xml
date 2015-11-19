@@ -9,6 +9,7 @@
     <target>./UCRest</target>
   </transformer>
   <files>
+    <directory>../UCRest/tests/</directory>
     <directory>../UCRest/app/Models</directory>
   </files>
 </phpdoc>

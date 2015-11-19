@@ -1,5 +1,14 @@
 <?php
+/**
+* Archivo que contiene la clase TestCase
+*/
 
+namespace Tests;
+
+/**
+* Clase que contiene las funcionalidades de Laravel para hacer tests.
+*
+*/
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     /**

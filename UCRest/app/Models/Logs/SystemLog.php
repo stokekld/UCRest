@@ -4,7 +4,7 @@
 *
 * @author Humberto de Jesus Flores Acuña <joy_warmgun@hotmail.com>
 * @version 0.0.1
-* @package Core\log
+* @package UCRest\Models\Logs
 */
 
 namespace UCRest\Models\Logs;

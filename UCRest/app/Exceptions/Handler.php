@@ -48,8 +48,16 @@ class Handler extends ExceptionHandler
 
         if ( $sysLog -> debugging() )
         {
-            $log = SystemLog::getInstance() -> getLog();
-            $log -> addError("Exception", ["message" => $e->getMessage()]);
+            try {
+
+                $log = SystemLog::getInstance() -> getLog();
+                $log -> addError("Exception", ["message" => $e->getMessage()]);
+                
+            } catch (Exception $exception) {
+
+                return response()->json(["error" => true, "type" => get_class($e), "message" => $exception->getMessage()], 500);
+                
+            }
         }
 
         // if ($e instanceof ModelNotFoundException) {
