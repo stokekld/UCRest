@@ -11,7 +11,13 @@
 |
 */
 
+use UCRest\Models\Entity\TestEntity;
+
 Route::get('/', function () {
-	throw new Exception("Error Processing Request", 1);
+
+	$testEntity = new TestEntity;
+
+	$testEntity::all();
+
     return view('bienvenida');
 });
