@@ -11,13 +11,23 @@
 |
 */
 
-use UCRest\Models\Entity\TestEntity;
+use UCRest\Models\Database\Entity\TestEntity;
+use UCRest\Models\Database\Manager\ManagerDecorator;
 
 Route::get('/', function () {
 
 	$testEntity = new TestEntity;
 
-	$testEntity::all();
+		$testEntity = new ManagerDecorator($testEntity);
+
+		$data = [
+			"id_test" => "hola",
+			"test_col1" => "hola",
+			"test_col2" => "hola",
+			"test_col3" => "hola",
+		];
+
+		$value = $testEntity -> insert($data);
 
     return view('bienvenida');
 });

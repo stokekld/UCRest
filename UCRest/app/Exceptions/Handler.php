@@ -61,9 +61,13 @@ class Handler extends ExceptionHandler
         }
 
         if ( $e instanceof \PDOException )
-        {
             return response()->json(['error' => true, 'type' => 'PDOException', 'message' => $e->getMessage() ], 500);
-        }
+
+        if ( $e instanceof \InvalidArgumentException )
+            return response()->json(['error' => true, 'type' => 'InvalidArgumentException', 'message' => $e->getMessage() ], 500);
+
+        if ( $e instanceof \UnexpectedValueException )
+            return response()->json(['error' => true, 'type' => 'UnexpectedValueException', 'message' => $e->getMessage() ], 400);
 
         // if ($e instanceof ModelNotFoundException) {
         //     $e = new NotFoundHttpException($e->getMessage(), $e);
