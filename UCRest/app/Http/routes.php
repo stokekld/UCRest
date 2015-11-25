@@ -12,22 +12,21 @@
 */
 
 use UCRest\Models\Database\Entity\TestEntity;
-use UCRest\Models\Database\Manager\ManagerDecorator;
 
 Route::get('/', function () {
 
 	$testEntity = new TestEntity;
 
-		$testEntity = new ManagerDecorator($testEntity);
+	
 
-		$data = [
-			"id_test" => "hola",
-			"test_col1" => "hola",
-			"test_col2" => "hola",
-			"test_col3" => "hola",
-		];
+	$data = [
+		"test_col1" => "hola",
+		"test_col2" => "hola",
+		"test_col3" => "hola",
+		"test_col4" => "hola",
+	];
 
-		$value = $testEntity -> insert($data);
+	$value = $testEntity -> myInsert($data);
 
     return view('bienvenida');
 });

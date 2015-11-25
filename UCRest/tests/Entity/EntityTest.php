@@ -9,22 +9,35 @@ use UCRest\Models\Database\Manager\ManagerDecorator;
 class EntityTest extends TestCase
 {
 	
-	public function testGetInstance()
+	public function testInsert()
 	{
 		$testEntity = new TestEntity;
 
-		$testEntity = new ManagerDecorator($testEntity);
-
 		$data = [
-			"id_test" => "hola",
 			"test_col1" => "hola",
 			"test_col2" => "hola",
-			"test_col3" => "hola",
+			"test_col3" => "hola"
 		];
 
-		$value = $testEntity -> insert($data);
+		$testEntity -> myInsert($data);
 
-		var_dump($value -> toArray());
+	}
 
+	public function testUpdate()
+	{
+		$testEntity = new TestEntity;
+
+
+		$data = [
+			"test_col3" => "hola22",
+			"test_col2" => "hola22"
+		];
+
+
+		$testEntity -> where("idtest", 2) -> get() -> each( function($item) use ($data){
+
+			$item -> myUpdate($data);
+
+		} );
 	}
 }
