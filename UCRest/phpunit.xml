@@ -12,6 +12,7 @@
         <testsuite name="Application Test Suite">
             <file>tests/Logs/LogTest.php</file>
             <file>tests/Entity/EntityTest.php</file>
+            <file>tests/User/UserTest.php</file>
         </testsuite>
     </testsuites>
     <filter>
